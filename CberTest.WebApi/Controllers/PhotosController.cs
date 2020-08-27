@@ -42,8 +42,7 @@ namespace CberTest.WebApi.Controllers
         [HttpGet("{id}")]
         public async Task<IActionResult> Get(string id)
         {
-            var photoWithIdSpec = new PhotoWithIdSpecification(id);
-            var photo = await unitOfWork.PhotoRepository.FirstOrDefaultAsync(photoWithIdSpec);
+            var photo = await unitOfWork.PhotoRepository.GetByIdAsync(id);
             if (photo == null)
             {
                 return NotFound();
@@ -55,8 +54,8 @@ namespace CberTest.WebApi.Controllers
         [HttpGet("{id}/file")]
         public async Task<IActionResult> GetFile(string id)
         {
-            var photoWithIdSpec = new PhotoWithIdSpecification(id);
-            var photo = await unitOfWork.PhotoRepository.FirstOrDefaultAsync(photoWithIdSpec);
+            var photoWithFileSpec = new PhotoWithFileSpecification(id);
+            var photo = await unitOfWork.PhotoRepository.FirstOrDefaultAsync(photoWithFileSpec);
             if (photo == null)
             {
                 return NotFound();

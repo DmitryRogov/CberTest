@@ -26,7 +26,7 @@ namespace CberTest.Core.Models
         /// </summary>
         public byte[] Content { get; }
 
-        public Photo Photo { get; }
+        public virtual Photo Photo { get; }
 
         private MediaFile() { }
 
