@@ -1,0 +1,159 @@
+{
+	"info": {
+		"_postman_id": "f3213b94-1425-4087-8db1-d77654b97660",
+		"name": "CberTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Удаление фотографии",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/photos/ce00c124-713f-4b96-9585-857774c2b103",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"photos",
+						"ce00c124-713f-4b96-9585-857774c2b103"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение файла фотографии по идентификатору",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/photos/d251fc6d-0626-4f4a-95e0-756c7fc5be1f/file",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"photos",
+						"d251fc6d-0626-4f4a-95e0-756c7fc5be1f",
+						"file"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение фотографии по идентфиикатору",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/photos/d251fc6d-0626-4f4a-95e0-756c7fc5be1f",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"photos",
+						"d251fc6d-0626-4f4a-95e0-756c7fc5be1f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Получение списка фотографий",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/photos?name&description&limit=12&offset=6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"photos"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": null,
+							"description": "Поисковый запрос по названию"
+						},
+						{
+							"key": "description",
+							"value": null,
+							"description": "Поисковый запрос по описанию"
+						},
+						{
+							"key": "limit",
+							"value": "12",
+							"description": "Лимит"
+						},
+						{
+							"key": "offset",
+							"value": "6",
+							"description": "Позиция выборки"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Добавление фотографии",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "",
+							"description": "Название",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "",
+							"description": "Описание",
+							"type": "text"
+						},
+						{
+							"key": "file",
+							"description": "Фотография",
+							"type": "file",
+							"src": []
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:5000/api/photos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"photos"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
